@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.ts",
-    "precise-commits": "precise-commits",
-    "precommit": "npm run precise-commits"
+    "precise-commits": "precise-commits"
   },
   "author": "",
   "license": "ISC",
@@ -24,5 +23,10 @@
     "semi": false,
     "tabWidth": 2,
     "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precise-commits"
+    }
   }
 }
