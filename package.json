@@ -4,25 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard *.ts test/**/*.ts && mocha -r ts-node/register test/**/*.ts"
+    "test": "mocha -r ts-node/register test/**/*.ts",
+    "precise-commits": "precise-commits",
+    "precommit": "npm run precise-commits"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.9.2",
-    "eslint-import-resolver-node": "^0.3.2",
-    "eslint-plugin-typescript": "^0.12.0",
+    "husky": "^1.0.0-rc.13",
     "mocha": "^5.2.0",
-    "standard": "^11.0.1",
+    "precise-commits": "^1.0.2",
+    "prettier": "^1.14.2",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.1",
-    "typescript-eslint-parser": "^18.0.0"
+    "typescript": "^3.0.1"
   },
-  "standard": {
-    "parser": "typescript-eslint-parser",
-    "plugins": [
-      "typescript"
-    ]
+  "prettier": {
+    "tabWidth": 2,
+    "singleQuote": true
   }
 }
