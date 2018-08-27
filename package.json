@@ -4,17 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard *.ts test/**/*.ts && mocha -r ts-node/register test/**/*.ts"
+    "test": "standard *.ts src/*.ts __tests__/**/*.ts && jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^5.2.5",
+    "@types/jest": "^23.3.1",
     "@types/node": "^10.9.2",
     "eslint-import-resolver-node": "^0.3.2",
     "eslint-plugin-typescript": "^0.12.0",
-    "mocha": "^5.2.0",
+    "jest": "^23.5.0",
+    "jest-environment-jsdom": "^23.4.0",
     "standard": "^11.0.1",
+    "ts-jest": "^23.1.4",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.1",
     "typescript-eslint-parser": "^18.0.0"
@@ -23,6 +25,25 @@
     "parser": "typescript-eslint-parser",
     "plugins": [
       "typescript"
+    ]
+  },
+  "jest": {
+    "globals": {
+      "ts-jest": {
+        "skipBabel": true
+      }
+    },
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
     ]
   }
 }
