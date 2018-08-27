@@ -5,6 +5,7 @@ import num from '../src/empty'
 
 describe('Test', () => {
   it('works', () => {
-    expect(num).toBe(123)
+    const x = num
+    expect(x).toBe(123)
   })
 })
