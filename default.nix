@@ -7,7 +7,7 @@ mkShell {
   ];
 
   shellHook = ''
-    export PATH=$PATH:node_modules/.bin
+    export PATH=$PATH:$(pwd)/node_modules/.bin
   '';
 }
 
