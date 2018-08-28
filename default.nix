@@ -5,5 +5,9 @@ mkShell {
   buildInputs = [
     nodejs-8_x nodePackages_8_x.pnpm
   ];
+
+  shellHook = ''
+    export PATH=$PATH:node_modules/.bin
+  '';
 }
 
