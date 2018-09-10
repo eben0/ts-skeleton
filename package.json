@@ -4,25 +4,52 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "standard *.ts test/**/*.ts && mocha -r ts-node/register test/**/*.ts"
+    "precise-commits": "precise-commits",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/mocha": "^5.2.5",
+    "@babel/core": "^7.0.0-rc.3",
+    "@babel/preset-env": "^7.0.0-rc.3",
+    "@types/jest": "^23.3.1",
     "@types/node": "^10.9.2",
-    "eslint-import-resolver-node": "^0.3.2",
-    "eslint-plugin-typescript": "^0.12.0",
-    "mocha": "^5.2.0",
-    "standard": "^11.0.1",
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-istanbul": "^4.1.6",
+    "babel-preset-jest": "^23.2.0",
+    "husky": "^1.0.0-rc.13",
+    "jest": "^23.5.0",
+    "jest-environment-jsdom": "^23.4.0",
+    "precise-commits": "^1.0.2",
+    "prettier": "^1.14.2",
+    "ts-jest": "^23.1.4",
     "ts-node": "^7.0.1",
-    "typescript": "^3.0.1",
-    "typescript-eslint-parser": "^18.0.0"
+    "tslint": "^5.11.0",
+    "typescript": "^3.0.1"
   },
-  "standard": {
-    "parser": "typescript-eslint-parser",
-    "plugins": [
-      "typescript"
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
     ]
+  },
+  "prettier": {
+    "semi": false,
+    "tabWidth": 2,
+    "singleQuote": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precise-commits"
+    }
   }
 }
